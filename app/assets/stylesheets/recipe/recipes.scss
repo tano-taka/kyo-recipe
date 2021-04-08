@@ -1,11 +1,8 @@
-.main {
-  height: 100vh;
-  width: 100vh;
-  background-color: bisque;
-}
 
 .title-contents {
   width: 100vw;
+  height: 50vh;
+  min-height: 250px;
   background-image: image-url('recipe_top.png');
   background-size: cover;
   background-repeat: no-repeat;
@@ -15,6 +12,15 @@
   align-items: flex-start;
   justify-content: center;
   padding: 5vh 15vw;
-  color: #fff;
-  text-shadow: 0 0 5px rgba(0, 0, 0, 0.9);
+  color: rgb(85, 158, 91);
+  text-shadow: 0 0 5px rgba(132, 221, 166, 0.9);
+}
+
+.title-text {
+  font-size: 9vh;
+  font-style: italic;
+}
+
+.title-sub-text {
+  font-size: 4vh;
 }
