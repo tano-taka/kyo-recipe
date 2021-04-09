@@ -3,9 +3,14 @@
     <%= link_to 'HOME画面へ戻る', root_path %>
   </header>
 
+
   <div class="new-recipe-main">
     <h1>レシピを投稿</h1>
     <%= form_with model: @recipe, local: true do |f| %>
+    <%= render 'shared/error_messages', model: f.object %>
+
+    <div></div>
+
 
     <div class="input-image">
       <%= f.label :image %><br />
