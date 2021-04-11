@@ -1,0 +1,57 @@
+<%= render "shared/header" %>
+
+<div class="recipe-show">
+  <div class="recipe-conetent">
+    <div class="content-user">
+      <h2>
+      <%= @recipe.user.nickname %>さんのKYOレシピ
+      </h2>
+    </div>
+    <div class="content-image">
+      <%= image_tag @recipe.image %>
+    </div>
+    <div class="contet-price">
+      <h2>
+      （一人分）だいたい<b class="price" ><%= "#{@recipe.price}円" %></b> くらい
+      </h2>
+    </div>
+  </div>
+  <div class="procedure-content">
+    <div class="procedure-box">
+      <div class="procedure-num">
+        <h1>■手順①</h1>
+      </div>
+      <div class="procedure-text">
+        <%= @recipe.procedure1 %>
+      </div>
+    </div>
+    <% unless @recipe.procedure2.nil? %>
+      <div class="procedure-box">
+        <div class="procedure-num">
+          <h1>■手順②</h1>
+        </div>
+        <div class="procedure-text">
+          <%= @recipe.procedure2 %>
+        </div>
+      </div>
+    <% end %>
+    <% unless @recipe.procedure3.nil? %>
+      <div class="procedure-box">
+        <div class="procedure-num">
+          <h1>■手順③</h1>
+        </div>
+        <div class="procedure-text">
+          <%= @recipe.procedure3 %>
+        </div>
+      </div>
+    <% end %>
+    <div class="recipe-point-contet">
+      <div class="point-titel">
+        <h1>■コツ・ポイント・補足</h1>
+      </div>
+      <div class="point-text">
+        <%= @recipe.info %>
+      </div>
+    </div>
+  </div>
+</div>
