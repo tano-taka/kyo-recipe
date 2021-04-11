@@ -6,6 +6,8 @@
       <h2>
       <%= @recipe.user.nickname %>さんのKYOレシピ
       </h2>
+      <%= link_to "更新", edit_recipe_path(@recipe.id) %>
+      <%= link_to "削除", recipe_path(@recipe.id), method: :delete %>
     </div>
     <div class="content-image">
       <%= image_tag @recipe.image %>
