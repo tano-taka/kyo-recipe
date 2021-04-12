@@ -1,23 +1,81 @@
 .recipe-show {  
-
+  width: 100vw;
+  padding: 10vh 15vw;
 }
 
-.recile-content {
-
+.recipe-content {
+  width: : 70vw;
 }
 
 .content-user {
+  display: flex;
+  justify-content: space-between;
+  font-size: 2.5vw;
+  color: #58430a;
+  font-weight: 900;
+}
 
+.link-buttons {
+  display: flex;
+}
+
+.link-button {
+  color: #58430a;
+  margin: 0 20px;
+  padding: 2px 5px;
+  border:  #58430a 3px solid;
+  border-radius: 8px;
+  text-decoration: none;
 }
 
 .content-image {
+  height: 75vh;
+  min-height: 200px;
+  margin: 15px 0;
+}
 
+img {
+  height: 100%;
+  width:100%;
+  object-fit: contain;
 }
 
 .contet-price {
-  
+  font-size: 1.5vw;
+  color: #58430a;
+  text-align: right;
+}
+.price {
+  font-size: 2.5vw;
+  color: #de5432;
+  font-weight: 900;
 }
 
-.price {
+.procedure-content {
+  width: 70vw;
+  background-color: rgb(254, 247, 236);
+  padding: 15px 3vw;
+}
 
+.procedure-box {
+  padding: 20px 3vh;
+  margin: 20px 0 ;
+  border: #9f7368 2px solid;
+}
+
+.procedure-num, .point-title {
+  font-size: 2vw;
+  color: #9f7368;
+  font-weight: 900;
+}
+
+.procedure-text, .point-text {
+  font-size: 2.5vw;
+  color: #58430a;
+  font-weight: 700;
+}
+
+.point-title {
+  text-align: center;
+  padding: 20px 3vh;
 }

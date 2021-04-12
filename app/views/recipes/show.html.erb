@@ -6,25 +6,23 @@
 <div class="recipe-show">
   <div class="recipe-conetent">
     <div class="content-user">
-      <h3>
-      <%= @recipe.user.nickname %>さんのKYOレシピ
-      </h3>
-      <%= link_to "更新", edit_recipe_path(@recipe.id) %>
-      <%= link_to "削除", recipe_path(@recipe.id), method: :delete %>
+      <%= "#{@recipe.user.nickname} さんのKYOレシピ" %>
+      <div class="link-buttons">
+        <%= link_to "更新", edit_recipe_path(@recipe.id), class:"link-button" %>
+        <%= link_to "削除", recipe_path(@recipe.id), method: :delete, class:"link-button" %>
+      </div>
     </div>
     <div class="content-image">
       <%= image_tag @recipe.image %>
     </div>
     <div class="contet-price">
-      <h3>
-      （一人分）だいたい<b class="price" ><%= "#{@recipe.price}円" %></b> くらい
-      </h3>
+      （一人分）だいたい<b class="price" ><%= " #{@recipe.price}円" %></b> くらい
     </div>
   </div>
   <div class="procedure-content">
     <div class="procedure-box">
       <div class="procedure-num">
-        <h2>■手順①</h2>
+        〜手順①〜
       </div>
       <div class="procedure-text">
         <%= @recipe.procedure1 %>
@@ -33,7 +31,7 @@
     <% unless @recipe.procedure2.nil? %>
       <div class="procedure-box">
         <div class="procedure-num">
-          <h2>■手順②</h2>
+          〜手順②〜
         </div>
         <div class="procedure-text">
           <%= @recipe.procedure2 %>
@@ -43,7 +41,7 @@
     <% unless @recipe.procedure3.nil? %>
       <div class="procedure-box">
         <div class="procedure-num">
-          <h2>■手順③</h2>
+          〜手順③〜
         </div>
         <div class="procedure-text">
           <%= @recipe.procedure3 %>
@@ -51,8 +49,8 @@
       </div>
     <% end %>
     <div class="recipe-point-contet">
-      <div class="point-titel">
-        <h2>■コツ・ポイント・補足</h2>
+      <div class="point-title">
+        ■コツ・ポイント・補足■
       </div>
       <div class="point-text">
         <%= @recipe.info %>
