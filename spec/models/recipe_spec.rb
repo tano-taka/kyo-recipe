@@ -50,8 +50,8 @@ RSpec.describe Recipe, type: :model do
         @recipe.valid?
         expect(@recipe.errors.full_messages).to include("Price Out of setting range")
       end
-      it '値段が2001円以上だと登録できない' do
-        @recipe.price = 2001
+      it '値段が1001円以上だと登録できない' do
+        @recipe.price = 1001
         @recipe.valid?
         expect(@recipe.errors.full_messages).to include("Price Out of setting range")
       end
