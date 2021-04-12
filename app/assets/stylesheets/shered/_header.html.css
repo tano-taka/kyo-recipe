@@ -28,6 +28,8 @@ img.logo-image {
 
 .nav-right-box {
   display: flex;
+  align-items: center;
+  justify-content: center
 }
 
 .recipe-post {
@@ -47,13 +49,18 @@ img.logo-image {
 
 .nav-right {
   list-style: none;
+  display: flex;
 }
 
 .user-nickname {
   text-decoration: none;
-  margin-right: 3vw;
   color: #58430a;
   font-weight: bold;
+  border: #58430a 3px solid;
+  padding: 10px;
+  height: 90%;
+  margin-right: 15px;
+  margin-top: auto;
 }
 
 
@@ -61,20 +68,29 @@ img.logo-image {
   text-decoration: none;
   color: #58430a;
   font-weight: bold;
+  border: #58430a 3px solid;
+  padding: 10px;
+  height: 90%;
 }
 
 .login {
   text-decoration: none;
-  line-height: 32px;
-  margin-right: 3vw;
   color: #58430a;
   font-weight: bold;
+  border: #58430a 3px solid;
+  padding: 10px;
+  height: 90%;
+  margin: auto 15px 0 0;
+  
 }
 
 .sign-up {
   text-decoration: none;
   color: #58430a;
   font-weight: bold;
+  border: #58430a 3px solid;
+  padding: 10px;
+  height: 90%;
 }
 
 
