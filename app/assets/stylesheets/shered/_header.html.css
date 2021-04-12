@@ -1,8 +1,10 @@
 .top-page-header {
+  background-color: white;
   width: 100vw;
   padding: 2vh 15vw;
   display: flex;
   flex-direction: column;
+  position: fixed;
 }
 
 .nav {
@@ -11,40 +13,62 @@
   justify-content: space-between;
   flex-wrap: wrap;
   width: 100%;
-  padding: 1vh 0;
+  padding: 1vh 10vh 1vh 0;
 }
 
+img.logo-image {
+  width: 12vw;
+  min-width: 150px;
+}
 
-.lists-right {
+.nav-right-box {
   display: flex;
-  list-style: none;
-  align-items: flex-end;
 }
 
+.recipe-post {
+  border: #58430a 3px solid;
+  border-radius: 30px;
+  padding: 10px;
+  height: 90%;
+  margin-right: 50px;
+}
+
+.recipe-post-button {
+  text-decoration: none;
+  color: #58430a;
+  font-weight: bold;
+}
+
+.nav-right {
+  list-style: none;
+}
 
 .user-nickname {
   text-decoration: none;
   margin-right: 3vw;
-  color: #333333;
+  color: #58430a;
   font-weight: bold;
 }
 
 
 .logout {
   text-decoration: none;
-  color: #333333;
+  color: #58430a;
+  font-weight: bold;
 }
 
 .login {
   text-decoration: none;
   line-height: 32px;
   margin-right: 3vw;
-  color: #333333;
+  color: #58430a;
+  font-weight: bold;
 }
 
 .sign-up {
   text-decoration: none;
-  color: #333333;
+  color: #58430a;
+  font-weight: bold;
 }
 
 
@@ -64,17 +88,32 @@
 .search-form>.input-box {
   width: 100%;
   height: 5vh;
+  min-height: 25px;
   padding-left: 10px;
 }
 
 .search-button {
   width: 5vh;
+  min-height: 25px;
   border: 0;
   cursor: pointer;
   background-color: #3ccace;
-  padding: 8px;
+  padding: 5px;
 }
 
 .search-icon {
   width: 100%;
+}
+
+
+/* ipad画像サイズ */
+
+@media (max-width: 1024px) {
+  .top-page-header {
+    padding: 2vh 15vw;
+  }
+  .nav {
+    font-size: 9px;
+    padding: 1vh;
+  }
 }

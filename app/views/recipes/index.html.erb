@@ -1,12 +1,57 @@
 <%= render "shared/header" %>
-
+<div class='top-page-header-anker'>
+</div>  
+<div class="top-main">
   <div class='title-contents'>
     <h2 class='title-text'>
       KYOレシピ検索アプリ！
     </h2>
     <p class='title-sub-text'>
-        簡単で、安くて、美味しい！<br>『今日』作れるものがすぐに見つかるアプリ！
-    </p>
+        簡単で、安くて、美味しい！<br>『今日』作れるものがすぐに見つかる！
     </p>
   </div>
+  <div class="rule-contents">
+    <ul class="rule-title">
+    〜KYOレシピの3つの特徴〜
+      <li class="rule-list">
+      「K」簡単に作れる。手順は3つまで、1つ50文字以内でできるもの。
+      </li>
+      <li class="rule-list"> 
+      「Y」安く出来る。金額は一人分の作成費、最大1000円まで。
+      </li>
+      <li class="rule-list"> 
+      「O」美味しいもの。見た目よりも美味しさ重視。
+      </li>
+    </ul>
+  </div>
+  <div class="recipe-contents">
+    <div class="recipe-list-title">
+      新着レシピ
+    </div>
+    <div class="recipe-lists">
+      <% @recipe.each do |recipe| %>
+        <div class="recipe-list">
+          <div class="list-title">
+            <%= recipe.title %>
+          </div>
+          <div class="list-image-box">
+            <%= link_to image_tag(recipe.image, class: "list-image"), recipe_path(recipe.id) %>
+          </div>
+          <div class="list-user-price">
+            <div class="list-user">
+              <%= recipe.user.nickname %>さん
+            </div>
+            <div class="list-price">
+              約<%= recipe.price%>円
+            </div>
+          </div>
+          <div class="list-procedure">
+              <p>〜手順①〜</p>
+            <%= recipe.procedure1 %>
+            <%= link_to "詳細を確認", recipe_path(recipe.id), class: "procedure-link" %>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div> 
 </div>

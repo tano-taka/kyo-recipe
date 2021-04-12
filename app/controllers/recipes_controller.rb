@@ -2,6 +2,7 @@ class RecipesController < ApplicationController
   before_action :set_recipe, only: [:show, :edit, :update, :destroy]
 
   def index
+    @recipe = Recipe.includes(:user).order('created_at DESC')
   end
 
   def new

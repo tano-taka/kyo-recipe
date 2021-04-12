@@ -7,7 +7,7 @@ class Recipe < ApplicationRecord
     validates :title, length: { maximum: 20 }
     validates :price
     validates :procedure1
-    validates_inclusion_of :price, in: 1..2000, message: 'Out of setting range'
+    validates_inclusion_of :price, in: 1..1000, message: 'Out of setting range'
   end
 
   with_options length: { maximum: 50 } do
