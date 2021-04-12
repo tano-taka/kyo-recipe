@@ -30,7 +30,7 @@
       新着レシピ
     </div>
     <div class="recipe-lists">
-      <% @recipe.each do |recipe| %>
+      <% @recipe.last(15).each do |recipe| %>
         <div class="recipe-list">
           <div class="list-title">
             <%= recipe.title %>
@@ -49,10 +49,11 @@
           <div class="list-procedure">
               <p>〜手順①〜</p>
             <%= recipe.procedure1 %>
-            <%= link_to "詳細を確認", recipe_path(recipe.id), class: "procedure-link" %>
+            <%= link_to "詳細", recipe_path(recipe.id), class: "procedure-link" %>
           </div>
         </div>
       <% end %>
     </div>
   </div> 
 </div>
+

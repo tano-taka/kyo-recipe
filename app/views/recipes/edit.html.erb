@@ -1,53 +1,53 @@
+<%# cssはrecipe/new.cssを使用 %>
+
 <div class="new-recipe-contens">
   <header class="new-recipe-header">
-    <%= link_to 'HOME画面へ戻る', root_path %>
+     <%= link_to image_tag("kyo_rogo.png", class:"logo-image"), "/" %>
   </header>
 
 
   <div class="new-recipe-main">
-    <h1>レシピを投稿</h1>
+    <div class="new-recipe-title">レシピを更新</div>
+
     <%= form_with model: @recipe, local: true do |f| %>
     <%= render 'shared/error_messages', model: f.object %>
 
-    <div></div>
-
-
-    <div class="input-image">
-      <%= f.label :image %><br />
+    <div class="input-field">
+      <%= f.label :画像：必須 %><br />
       <%= f.file_field :image %>
     </div>
 
-    <div class="input-image">
-      <%= f.label :title %><br />
-      <%= f.text_field :title %>
+    <div class="input-field">
+      <%= f.label :タイトル：必須 %><br />
+      <%= f.text_field :title, placeholder: "20文字以内で記入してください"  %>
     </div>
 
-    <div class="input-image">
-      <%= f.label :price %><br />
-      <%= f.text_field :price %>
+    <div class="input-field">
+      <%= f.label :材料費：必須 %><br />
+      <%= f.text_field :price, placeholder: "1000(円)以内で記入してください"  %>
     </div>
 
-    <div class="input-image">
-      <%= f.label :procedure1 %><br />
-      <%= f.text_field :procedure1 %>
+    <div class="input-field">
+      <%= f.label :手順①：必須 %><br />
+      <%= f.text_field :procedure1, placeholder: "50文字以内で記入してください" %>
     </div>
 
-    <div class="input-image">
-      <%= f.label :procedure2 %><br />
-      <%= f.text_field :procedure2 %>
+    <div class="input-field">
+      <%= f.label :手順② %><br />
+      <%= f.text_field :procedure2, placeholder: "50文字以内で記入してください" %>
     </div>
 
-    <div class="input-image">
-      <%= f.label :procedure3 %><br />
-      <%= f.text_field :procedure3 %>
+    <div class="input-field">
+      <%= f.label :手順③ %><br />
+      <%= f.text_field :procedure3, placeholder: "50文字以内で記入してください" %>
     </div>
 
-    <div class="input-image">
-      <%= f.label :info %><br />
-      <%= f.text_area :info %>
+    <div class="input-field">
+      <%= f.label :コツ・ポイント・補足 %><br />
+      <%= f.text_area :info, size: "50%" %>
     </div>
 
-    <%= f.submit "投稿する" ,class:"sell-btn" %>
+    <%= f.submit "更新する" ,class:"sell-btn" %>
 
   <% end %>
 </div>
