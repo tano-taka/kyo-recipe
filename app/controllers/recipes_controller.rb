@@ -1,5 +1,7 @@
 class RecipesController < ApplicationController
+  before_action :authenticate_user!, except: [:index, :show, :search]
   before_action :set_recipe, only: [:show, :edit, :update, :destroy]
+  before_action :identification, only: [:edit, :update, :destroy]
 
   def index
     @recipe = Recipe.includes(:user).order('created_at DESC')
@@ -13,6 +15,7 @@ class RecipesController < ApplicationController
     @recipe = Recipe.new(recipe_params)
     if @recipe.valid?
       @recipe.save
+      binding.pry
       redirect_to root_path
     else
       render :new
@@ -52,4 +55,7 @@ class RecipesController < ApplicationController
     @recipe = Recipe.find(params[:id])
   end
 
+  def identification
+    redirect_to root_path unless current_user.id == @recipe.user_id
+  end
 end

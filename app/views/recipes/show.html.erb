@@ -7,10 +7,12 @@
   <div class="recipe-conetent">
     <div class="content-user">
       <%= "#{@recipe.user.nickname} さんのKYOレシピ" %>
-      <div class="link-buttons">
-        <%= link_to "更新", edit_recipe_path(@recipe.id), class:"link-button" %>
-        <%= link_to "削除", recipe_path(@recipe.id), method: :delete, class:"link-button" %>
-      </div>
+      <% if user_signed_in?  && current_user.id == @recipe.user_id %>
+        <div class="link-buttons">
+          <%= link_to "更新", edit_recipe_path(@recipe.id), class:"link-button" %>
+          <%= link_to "削除", recipe_path(@recipe.id), method: :delete, class:"link-button" %>
+        </div>
+      <% end %>
     </div>
     <div class="content-image">
       <%= image_tag @recipe.image %>
@@ -28,7 +30,7 @@
         <%= @recipe.procedure1 %>
       </div>
     </div>
-    <% unless @recipe.procedure2.nil? %>
+    <% unless @recipe.procedure2 == "" %>
       <div class="procedure-box">
         <div class="procedure-num">
           〜手順②〜
@@ -38,7 +40,7 @@
         </div>
       </div>
     <% end %>
-    <% unless @recipe.procedure3.nil? %>
+    <% unless @recipe.procedure3 == "" %>
       <div class="procedure-box">
         <div class="procedure-num">
           〜手順③〜
