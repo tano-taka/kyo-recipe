@@ -38,6 +38,9 @@ class RecipesController < ApplicationController
     redirect_to root_path
   end
 
+  def search
+    @recipe = Recipe.search(params[:keyword])
+  end
 
   private
 

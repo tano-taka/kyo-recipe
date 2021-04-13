@@ -15,4 +15,12 @@ class Recipe < ApplicationRecord
     validates :procedure2
     validates :procedure3
   end
+
+  def self.search(search)
+    if search != ""
+      Recipe.where('title LIKE(?)', "%#{search}%").order('created_at DESC')
+    else
+      Recipe.includes(:user).order('created_at DESC')
+    end
+  end
 end
