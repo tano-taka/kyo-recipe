@@ -9,8 +9,7 @@ FactoryBot.define do
     association :user
 
     after(:build) do |recipe|
-      recipe.image.attach(io: File.open('public/images/test_img.jpg'), filename: 'test_img.jpg') 
-  
+      recipe.image.attach(io: File.open('public/images/test_img.jpg'), filename: 'test_img.jpg')
     end
   end
 end

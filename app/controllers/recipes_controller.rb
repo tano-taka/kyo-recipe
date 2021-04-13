@@ -30,7 +30,7 @@ class RecipesController < ApplicationController
 
   def update
     if @recipe.update(recipe_params)
-    redirect_to recipe_path(@recipe.id)
+      redirect_to recipe_path(@recipe.id)
     else
       render :edit
     end
@@ -48,7 +48,8 @@ class RecipesController < ApplicationController
   private
 
   def recipe_params
-    params.require(:recipe).permit(:image, :title, :price, :procedure1, :procedure2, :procedure3, :info).merge(user_id: current_user.id)
+    params.require(:recipe).permit(:image, :title, :price, :procedure1, :procedure2, :procedure3,
+                                   :info).merge(user_id: current_user.id)
   end
 
   def set_recipe

@@ -4,22 +4,22 @@ RSpec.describe Recipe, type: :model do
   before do
     @recipe = FactoryBot.build(:recipe)
   end
-  
+
   describe 'レシピ新規投稿' do
     context '新規投稿がうまくいく時' do
       it '画像があり全て項目が埋められていれば登録ができる' do
         expect(@recipe).to be_valid
       end
       it 'procedure2がなくても登録できる' do
-        @recipe.procedure2 = "" 
+        @recipe.procedure2 = ''
         expect(@recipe).to be_valid
       end
       it 'procedure3がなくても登録できる' do
-        @recipe.procedure3 = "" 
+        @recipe.procedure3 = ''
         expect(@recipe).to be_valid
       end
       it 'infoがなくても登録できる' do
-        @recipe.info = "" 
+        @recipe.info = ''
         expect(@recipe).to be_valid
       end
     end
@@ -38,7 +38,7 @@ RSpec.describe Recipe, type: :model do
       it 'タイトルが20文字を超えると登録できない' do
         @recipe.title = 'あ' * 21
         @recipe.valid?
-        expect(@recipe.errors.full_messages).to include("Title is too long (maximum is 20 characters)")
+        expect(@recipe.errors.full_messages).to include('Title is too long (maximum is 20 characters)')
       end
       it '値段がないと登録できない' do
         @recipe.price = ''
@@ -48,17 +48,17 @@ RSpec.describe Recipe, type: :model do
       it '値段が0円以下だと登録できない' do
         @recipe.price = 0
         @recipe.valid?
-        expect(@recipe.errors.full_messages).to include("Price Out of setting range")
+        expect(@recipe.errors.full_messages).to include('Price Out of setting range')
       end
       it '値段が1001円以上だと登録できない' do
         @recipe.price = 1001
         @recipe.valid?
-        expect(@recipe.errors.full_messages).to include("Price Out of setting range")
+        expect(@recipe.errors.full_messages).to include('Price Out of setting range')
       end
       it '値段が文字だと登録できない' do
-        @recipe.price = "テスト"
+        @recipe.price = 'テスト'
         @recipe.valid?
-        expect(@recipe.errors.full_messages).to include("Price Out of setting range")
+        expect(@recipe.errors.full_messages).to include('Price Out of setting range')
       end
       it 'procedure1がないと登録できない' do
         @recipe.procedure1 = ''
@@ -68,17 +68,17 @@ RSpec.describe Recipe, type: :model do
       it 'procedure1が50文字を超えると登録できない' do
         @recipe.procedure1 = 'あ' * 51
         @recipe.valid?
-        expect(@recipe.errors.full_messages).to include("Procedure1 is too long (maximum is 50 characters)")
+        expect(@recipe.errors.full_messages).to include('Procedure1 is too long (maximum is 50 characters)')
       end
       it 'procedure2が50文字を超えると登録できない' do
         @recipe.procedure2 = 'あ' * 51
         @recipe.valid?
-        expect(@recipe.errors.full_messages).to include("Procedure2 is too long (maximum is 50 characters)")
+        expect(@recipe.errors.full_messages).to include('Procedure2 is too long (maximum is 50 characters)')
       end
       it 'procedure3が50文字を超えると登録できない' do
         @recipe.procedure3 = 'あ' * 51
         @recipe.valid?
-        expect(@recipe.errors.full_messages).to include("Procedure3 is too long (maximum is 50 characters)")
+        expect(@recipe.errors.full_messages).to include('Procedure3 is too long (maximum is 50 characters)')
       end
       it 'userと紐づいてないと登録できない' do
         @recipe.user = nil

@@ -17,7 +17,7 @@ class Recipe < ApplicationRecord
   end
 
   def self.search(search)
-    if search != ""
+    if search != ''
       Recipe.where('title LIKE(?)', "%#{search}%").order('created_at DESC')
     else
       Recipe.includes(:user).order('created_at DESC')
