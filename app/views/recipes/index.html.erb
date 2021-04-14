@@ -40,7 +40,7 @@
           </div>
           <div class="list-user-price">
             <div class="list-user">
-              <%= recipe.user.nickname %>さん
+              <%= link_to "#{recipe.user.nickname}",  user_recipe_path(recipe.user_id), class: "list-user-text" %>さん
             </div>
             <div class="list-price">
               約<%= recipe.price%>円

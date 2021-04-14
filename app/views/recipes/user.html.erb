@@ -1,0 +1,50 @@
+<%= render "shared/header" %>
+<%# _heder.htmlcss使用 %>
+<div class='header-anker'>
+</div>  
+
+<div>
+  <ul class="user-contens">
+    <li class="user-content">
+      <%= @user.nickname %>さんのレシピ
+    </li>
+    <li class="user-content">
+      投稿数<%= @recipe.length%>個
+    </li>
+    <li class="user-content">
+      平均費用<%= @price %>円
+    </li>
+  </ul>
+</div>
+
+  <%# recipe/index.scss使用 %>
+  <div class="recipe-contents">
+    <div class="recipe-list-title">
+      レシピ（新着順）
+    </div>
+    <div class="recipe-lists">
+      <% @recipe.reverse_each do |recipe| %>
+        <div class="recipe-list">
+          <div class="list-title">
+            <%= recipe.title %>
+          </div>
+          <div class="list-image-box">
+            <%= link_to image_tag(recipe.image, class: "list-image"), recipe_path(recipe.id) %>
+          </div>
+          <div class="list-user-price">
+            <div class="list-user">
+              <%= recipe.user.nickname %>さん
+            </div>
+            <div class="list-price">
+              約<%= recipe.price%>円
+            </div>
+          </div>
+          <div class="list-procedure">
+              <p>〜手順①〜</p>
+            <%= recipe.procedure1 %>
+            <%= link_to "詳細", recipe_path(recipe.id), class: "procedure-link" %>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div> 

@@ -23,4 +23,13 @@ class Recipe < ApplicationRecord
       Recipe.includes(:user).order('created_at DESC')
     end
   end
+
+  def self.ave(recipe)
+    price = 0
+    recipe.each do |recipe|
+      price += recipe.price
+    end  
+    return price / recipe.length      
+  end
+
 end

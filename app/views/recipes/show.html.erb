@@ -6,7 +6,7 @@
 <div class="recipe-show">
   <div class="recipe-conetent">
     <div class="content-user">
-      <%= "#{@recipe.user.nickname} さんのKYOレシピ" %>
+      <%= link_to "#{@recipe.user.nickname}さんのKYOレシピ",  user_recipe_path(@recipe.user_id), class: "content-user-text" %>
       <% if user_signed_in?  && current_user.id == @recipe.user_id %>
         <div class="link-buttons">
           <%= link_to "更新", edit_recipe_path(@recipe.id), class:"link-button" %>

@@ -44,6 +44,12 @@ class RecipesController < ApplicationController
     @recipe = Recipe.search(params[:keyword])
   end
 
+  def user
+    @user = User.find(params[:id])
+    @recipe = @user.recipes
+    @price = Recipe.ave(@recipe)
+  end
+
   private
 
   def recipe_params

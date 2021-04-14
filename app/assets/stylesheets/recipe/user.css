@@ -1,0 +1,15 @@
+.user-contens {
+  width: 80vw;
+  height: 10vh;
+  margin-top: 5vh;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.user-content {
+  font-size: 2vw;
+  color: #58430a;
+  font-weight: 700;
+
+}
