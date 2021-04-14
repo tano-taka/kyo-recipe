@@ -10,7 +10,7 @@
       <% if user_signed_in?  && current_user.id == @recipe.user_id %>
         <div class="link-buttons">
           <%= link_to "更新", edit_recipe_path(@recipe.id), class:"link-button" %>
-          <%= link_to "削除", recipe_path(@recipe.id), method: :delete, class:"link-button" %>
+          <%= link_to "削除", recipe_path(@recipe.id), method: :delete, class:"link-button", data: { confirm: "削除したデータは戻りません、よろしいですか？"} %>
         </div>
       <% end %>
     </div>
