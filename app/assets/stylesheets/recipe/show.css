@@ -35,7 +35,7 @@
 .content-image {
   height: 75vh;
   min-height: 200px;
-  margin: 15px 0;
+  margin: 5px 0;
 }
 
 img {
@@ -44,10 +44,35 @@ img {
   object-fit: contain;
 }
 
-.contet-price {
+.contents-like-price {
+  display: flex;
+  justify-content: space-between;
+  margin: 3vh 3vw 0;
+}
+
+.content-like {
+  font-size: 1.8vw;
+}
+
+.content-like-not a {
+  color: #58430a;
+  border: #58430a 5px solid;
+  text-decoration: none;
+  border-radius: 25px;
+  padding: 1vh;
+}
+
+.content-like-done a {
+  color: #de5432;
+  border: #de5432 5px solid;
+  text-decoration: none;
+  border-radius: 25px;
+  padding: 1vh;
+}
+
+.content-price {
   font-size: 1.5vw;
   color: #58430a;
-  text-align: right;
 }
 .price {
   font-size: 2.5vw;

@@ -48,6 +48,7 @@ class RecipesController < ApplicationController
     @user = User.find(params[:id])
     @recipe = @user.recipes
     @price = Recipe.ave(@recipe)
+    @like_count = Like.count(@user)
   end
 
   private

@@ -17,8 +17,21 @@
     <div class="content-image">
       <%= image_tag @recipe.image %>
     </div>
-    <div class="contet-price">
-      （一人分）だいたい<b class="price" ><%= " #{@recipe.price}円" %></b> くらい
+    <div class="contents-like-price">
+      <div class="content-like">
+        <% if Like.find_by(user_id: current_user.id, recipe_id: @recipe.id) %>
+          <div class="content-like-done">
+          <%= link_to("いい値!(済)", "/likes/#{@recipe.id}/destroy", {method: "post"}) %>
+          </div>
+        <%else%>
+          <div class="content-like-not">
+          <%= link_to("いい値！", "/likes/#{@recipe.id}/create", {method: "post"}) %>
+          </div>
+        <% end %>
+      </div>
+      <div class="content-price">
+        （一人分）だいたい<b class="price" ><%= " #{@recipe.price}円" %></b> くらい
+      </div>
     </div>
   </div>
   <div class="procedure-content">
