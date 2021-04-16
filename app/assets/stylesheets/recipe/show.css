@@ -62,6 +62,12 @@ img {
   padding: 1vh;
 }
 
+.login-need {
+  color: #58430a;
+  padding: 1vh;
+  font-size: 1vw;
+}
+
 .content-like-done a {
   color: #de5432;
   border: #de5432 5px solid;
