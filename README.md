@@ -1,3 +1,91 @@
+# アプリ名
+
+### KYOレシピ（投稿・検索サイト）
+
+# 概要
+※文章でかく
+
+- レシピの投稿
+- レシピの検索/詳細確認
+- 評価機能（いいねボタン）
+- ユーザー登録/詳細確認
+
+# 本番環境
+
+https://kyo-recipe.herokuapp.com
+
+ログイン情報（テスト用）
+
+- メールアドレス：test1@test
+- パスワード：aaa111
+
+# 制作背景（意図）
+※卒業スライドから引用
+
+
+# DEMO
+- ログイン機能/ログアウト機能
+
+- レシピの投稿/編集/削除
+
+- レシピの検索機能
+
+- レシピ詳細確認
+
+- 評価機能（いいねボタン）
+
+- ユーザー詳細機能
+
+
+# 工夫したポイント
+
+投稿画面での文字数制限をして簡単にする
+新着順での表記で投稿意欲を高める、
+トップ画面では手順を1つだけ表記
+詳細画面でのいい値ボタンで評価する
+ユーザー詳細
+総合のいい値回数を出すことで投稿意欲を高める
+平均の材料費を出すことで価格を抑えることを意識づける
+
+# 使用技術（開発環境）
+
+## バックエンド
+ruby,ruby on Rails
+
+## フロントエンド
+javaScript,JQuery,Ajax
+
+## データベース
+MySQL,SequelPro
+
+## インフラ
+AWS(C3)
+
+## Webサーバー(本番環境)
+heroku
+
+## アプリケーションサーバー(本番環境)
+heroku
+
+# ソース管理
+GitHub,GithubDesktop
+
+# テスト
+RSpec
+
+# エディタ
+VSCode
+
+# 課題や今後実装したい機能
+※詳しく書く
+- TOP画面での人気レシピ表記
+- 材料検索
+- 調味料検索
+- インスタント食材検索
+- レシピ投稿時のプレビュー表記
+- 文字登録時の残文字数の表記
+- レシピに対してのコメント機能
+
 # kyo-recipeのER図
 
 ## users テーブル
@@ -11,10 +99,11 @@
 
 ### Association
 
--has_many :recipe
+-has_many :recipes
+-has_many :likes
 
 
-## recipe テーブル
+## recipes テーブル
 
 | Column                 | Type        | 0ptions                       |
 | ---------------------- | ----------- | ----------------------------- |
@@ -30,3 +119,16 @@
 ### Association
 
 -belongs_to :user
+-has_many :likes
+
+## likes テーブル
+
+| Column                 | Type        | 0ptions                       |
+| ---------------------- | ----------- | ----------------------------- |
+| user                   | references  | null: false, foreign_key:true |
+| recipe                 | references  | null: false, foreign_key:true |
+
+### Association
+
+-belongs_to :user
+-belongs_to :recipe
