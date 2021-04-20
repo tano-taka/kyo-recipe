@@ -1,0 +1,16 @@
+<% if user_signed_in? %>
+  <% if Like.find_by(user_id: current_user.id, recipe_id: recipe.id) %>
+    <div class="content-like-done"  >
+    <%= link_to "いい値!(済)", "/likes/#{recipe.id}/destroy", method: "delete", remote: true, class:"content-like-done"  %>
+    </div>
+  <% else %>
+    <div class="content-like-not", id="like-not">
+    <%= link_to "いい値！", "/likes/#{recipe.id}/create", method: "post", remote: true %>
+    </div>
+  <% end %>
+<% else %>
+  <div class="content-like-not">
+    <%= link_to "いい値！", new_user_session_path %>
+    <div class="login-need">※要ログイン※</div>
+  </div>
+<% end %>
