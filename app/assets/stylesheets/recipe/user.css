@@ -1,15 +1,13 @@
 .user-contens {
-  width: 80vw;
-  height: 10vh;
-  margin: 5vh 0 0 5vh;
+  height: 5vh;
+  margin: 3vh 20vw 3vh;
   display: flex;
-  justify-content: space-around;
-  align-items: center;
+  justify-content: space-between;
 }
 
 .user-content {
   font-size: 2vw;
   color: #58430a;
   font-weight: 700;
-
+  display: block;
 }
