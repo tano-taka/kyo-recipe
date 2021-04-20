@@ -38,13 +38,18 @@
           <div class="list-image-box">
             <%= link_to image_tag(recipe.image, class: "list-image"), recipe_path(recipe.id) %>
           </div>
-          <div class="list-user-price">
+          <div class="list-user-like-price">
             <div class="list-user">
               <%= link_to "#{recipe.user.nickname}",  user_recipe_path(recipe.user_id), class: "list-user-text" %>さん
             </div>
             <div class="list-price">
               約<%= recipe.price%>円
             </div>
+            <% if recipe.likes.exists? %>
+              <div class="list-like">
+                いい値!  <%= recipe.likes.length%>  
+              </div>
+            <% end %>
           </div>
           <div class="list-procedure">
               <p>〜手順①〜</p>
