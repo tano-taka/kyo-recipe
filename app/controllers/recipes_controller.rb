@@ -5,7 +5,6 @@ class RecipesController < ApplicationController
 
   def index
     @recipe = Recipe.includes(:user).order('created_at DESC')
-    
   end
 
   def new

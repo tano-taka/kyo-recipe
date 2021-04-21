@@ -1,5 +1,4 @@
 class LikesController < ApplicationController
-
   before_action :set_recipe
 
   def create
@@ -13,8 +12,8 @@ class LikesController < ApplicationController
   end
 
   private
+
   def set_recipe
     @recipe = Recipe.find(params[:recipe_id])
   end
-
 end

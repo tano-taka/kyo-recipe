@@ -6,10 +6,8 @@ class Like < ApplicationRecord
     like = Like.includes(:user, :recipe)
     like_count = 0
     like.each do |like|
-      if like.recipe.user_id == user.id
-        like_count += 1
-      end
+      like_count += 1 if like.recipe.user_id == user.id
     end
-    return like_count
+    like_count
   end
 end

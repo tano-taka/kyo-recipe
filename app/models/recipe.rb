@@ -29,7 +29,7 @@ class Recipe < ApplicationRecord
     price = 0
     recipe.each do |recipe|
       price += recipe.price
-    end  
-    return price / recipe.length      
+    end
+    price / recipe.length
   end
 end
