@@ -5,6 +5,8 @@
 
 # 概要
 
+## 投稿された料理のレシピを検索したり、自分のレシピを投稿することできるアプリです。
+
 - **レシピの検索/詳細確認**  
 利用者は投稿されたレシピを自由に見ることができ、自分が作りたいレシピを検索することができます。一覧画面から画像をクリックをすることで詳細の確認が可能です。
 
@@ -46,10 +48,6 @@ https://kyo-recipe.herokuapp.com
 
 [![Image from Gyazo](https://i.gyazo.com/769cbd9a7fb9bdbe885921557cad17d4.gif)](https://gyazo.com/769cbd9a7fb9bdbe885921557cad17d4)
 
-- ログイン機能/ログアウト機能
-
-[![Image from Gyazo](https://i.gyazo.com/1d5d6abb402499c40a332d2f28c7f386.gif)](https://gyazo.com/1d5d6abb402499c40a332d2f28c7f386)
-
 - レシピの検索機能
 
 [![Image from Gyazo](https://i.gyazo.com/ec1507e897b400bb99b110087a621193.gif)](https://gyazo.com/ec1507e897b400bb99b110087a621193)
@@ -65,10 +63,6 @@ https://kyo-recipe.herokuapp.com
 - レシピの投稿
 
 [![Image from Gyazo](https://i.gyazo.com/df20b33e1341ab0ca429391c7a9f35d4.gif)](https://gyazo.com/df20b33e1341ab0ca429391c7a9f35d4)
-
-- レシピ編集/削除
-
-[![Image from Gyazo](https://i.gyazo.com/d45721dac4893f50bd10357d07db8305.gif)](https://gyazo.com/d45721dac4893f50bd10357d07db8305)
 
 - ユーザー詳細機能
 
