@@ -46,15 +46,15 @@ https://kyo-recipe.herokuapp.com
 
 - トップ画面
 
-
+![トップ画像](https://user-images.githubusercontent.com/79428571/115507595-4b3dfa80-a2b7-11eb-936c-e29cd7617d89.gif)
 
 - レシピの検索機能
 
-[![Image from Gyazo](https://i.gyazo.com/ec1507e897b400bb99b110087a621193.gif)](https://gyazo.com/ec1507e897b400bb99b110087a621193)
+[![レシピ検索](https://i.gyazo.com/ec1507e897b400bb99b110087a621193.gif)](https://gyazo.com/ec1507e897b400bb99b110087a621193)
 
 - レシピ詳細確認
 
-[![Image from Gyazo](https://i.gyazo.com/e462a7ff26c835e4367d38ccd24757e8.gif)](https://gyazo.com/e462a7ff26c835e4367d38ccd24757e8)
+[![レシピ詳細](https://i.gyazo.com/e462a7ff26c835e4367d38ccd24757e8.gif)](https://gyazo.com/e462a7ff26c835e4367d38ccd24757e8)
 
 - 評価機能（いいねボタン）
 
@@ -62,11 +62,11 @@ https://kyo-recipe.herokuapp.com
 
 - レシピの投稿
 
-[![Image from Gyazo](https://i.gyazo.com/df20b33e1341ab0ca429391c7a9f35d4.gif)](https://gyazo.com/df20b33e1341ab0ca429391c7a9f35d4)
+[![レシピ投稿](https://i.gyazo.com/df20b33e1341ab0ca429391c7a9f35d4.gif)](https://gyazo.com/df20b33e1341ab0ca429391c7a9f35d4)
 
 - ユーザー詳細機能
 
-[![Image from Gyazo](https://i.gyazo.com/e24748e1c191d83031009229a2baf089.gif)](https://gyazo.com/e24748e1c191d83031009229a2baf089)
+![ユーザー詳細](https://user-images.githubusercontent.com/79428571/115507561-41b49280-a2b7-11eb-83a3-f97bc66966bd.gif)
 
 
 # 工夫したポイント
