@@ -43,7 +43,7 @@ https://kyo-recipe.herokuapp.com
 # DEMO
 
 - トップ画面
-![Uploading 769cbd9a7fb9bdbe885921557cad17d4.gif…]()
+
 [![Image from Gyazo](https://i.gyazo.com/769cbd9a7fb9bdbe885921557cad17d4.gif)](https://gyazo.com/769cbd9a7fb9bdbe885921557cad17d4)
 
 - ログイン機能/ログアウト機能
