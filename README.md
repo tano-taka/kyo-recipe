@@ -46,9 +46,6 @@ https://kyo-recipe.herokuapp.com
 
 [![Image from Gyazo](https://i.gyazo.com/769cbd9a7fb9bdbe885921557cad17d4.gif)](https://gyazo.com/769cbd9a7fb9bdbe885921557cad17d4)
 
-- ログイン機能/ログアウト機能
-
-[![Image from Gyazo](https://i.gyazo.com/1d5d6abb402499c40a332d2f28c7f386.gif)](https://gyazo.com/1d5d6abb402499c40a332d2f28c7f386)
 
 - レシピの検索機能
 
@@ -66,9 +63,6 @@ https://kyo-recipe.herokuapp.com
 
 [![Image from Gyazo](https://i.gyazo.com/df20b33e1341ab0ca429391c7a9f35d4.gif)](https://gyazo.com/df20b33e1341ab0ca429391c7a9f35d4)
 
-- レシピ編集/削除
-
-[![Image from Gyazo](https://i.gyazo.com/d45721dac4893f50bd10357d07db8305.gif)](https://gyazo.com/d45721dac4893f50bd10357d07db8305)
 
 - ユーザー詳細機能
 
