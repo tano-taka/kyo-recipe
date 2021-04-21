@@ -68,6 +68,7 @@ https://kyo-recipe.herokuapp.com
 
 [![Image from Gyazo](https://i.gyazo.com/769cbd9a7fb9bdbe885921557cad17d4.gif)](https://gyazo.com/769cbd9a7fb9bdbe885921557cad17d4)
 
+
 # 工夫したポイント
 
 - トップ画面でレシピ毎に「いいね」された回数を表記することで良いレシピを見つけやすくしました。  
