@@ -66,7 +66,7 @@ https://kyo-recipe.herokuapp.com
 
 - ユーザー詳細機能
 
-[![Image from Gyazo](https://i.gyazo.com/769cbd9a7fb9bdbe885921557cad17d4.gif)](https://gyazo.com/769cbd9a7fb9bdbe885921557cad17d4)
+[![Image from Gyazo](https://i.gyazo.com/e24748e1c191d83031009229a2baf089.gif)](https://gyazo.com/e24748e1c191d83031009229a2baf089)
 
 
 # 工夫したポイント
