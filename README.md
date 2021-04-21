@@ -56,7 +56,7 @@ https://kyo-recipe.herokuapp.com
 
 - レシピ詳細確認
 
-[![Image from Gyazo](https://i.gyazo.com/3c2cf8e9573ab95df37457ac8aa3c6b7.gif)](https://gyazo.com/3c2cf8e9573ab95df37457ac8aa3c6b7)
+[![Image from Gyazo](https://i.gyazo.com/e462a7ff26c835e4367d38ccd24757e8.gif)](https://gyazo.com/e462a7ff26c835e4367d38ccd24757e8)
 
 - 評価機能（いいねボタン）
 
