@@ -29,22 +29,24 @@
 
 .rule-contents {
   width: 100vw;
-  padding: 5vh 10vw;
+  padding: 7vh 15vw;
+  margin-top: 3vh;
   background-image: image-url('rule_background.jpg');
-  border: white 20px solid;
-  
+  background-position: top center;
+  background-repeat: no-repeat;
+  background-size: auto 100%;
 }
 
 .rule-title {
   font-size: 3vw;
-  color: rgb(127, 106, 57);
+  color: rgba(42, 27, 3, 0.807);
+  text-shadow: 0 0 5px rgba(255, 255, 255, 0.9);
   font-weight: 600;
   font-style: italic;
 }
 
 .rule-list {
   font-size: 2vw;
-  font-style: italic;
 }
 
 .recipe-contents {
