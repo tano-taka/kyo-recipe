@@ -2,9 +2,9 @@ FactoryBot.define do
   factory :recipe do
     title                      { 'testFood' }
     price                      { rand(1..1_000) }
-    procedure1                 { 'testprocedure' }
-    procedure2                 { 'testprocedure' }
-    procedure3                 { 'testprocedure' }
+    procedure1                 { 'testprocedure1' }
+    procedure2                 { 'testprocedure2' }
+    procedure3                 { 'testprocedure3' }
     info                       { 'testinfo' }
     association :user
 
