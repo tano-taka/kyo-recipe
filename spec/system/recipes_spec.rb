@@ -37,12 +37,97 @@ RSpec.describe 'レシピ投稿', type: :system do
       expect(page).to have_content(@recipe_info)
     end
   end
-  context 'ツイート投稿ができないとき' do
+  context 'レシピ投稿ができないとき' do
     it 'ログインしていないと新規投稿ページに遷移できない' do
       # 新規投稿ページに遷移する
       visit new_recipe_path
       # ログインページに遷移することを確認する。
       expect(current_path).to eq(new_user_session_path)
+    end
+  end
+end
+
+
+RSpec.describe 'レシピの編集', type: :system do
+  before do
+    @recipe1 = FactoryBot.create(:recipe)
+    @recipe2 = FactoryBot.create(:recipe)
+  end
+  context 'レシピ編集ができるとき' do
+    it 'ログインしたユーザーは自分が投稿したレシピの編集ができる' do
+      # レシピ1を投稿したユーザーでログインする
+      sign_in(@recipe1.user)
+      # レシピ１の詳細画面へ遷移する
+      visit recipe_path(@recipe1)
+      # レシピ1に「更新」ボタンがあることを確認する
+      expect(page).to have_link '更新', href: edit_recipe_path(@recipe1)
+      # 更新ページへ遷移する
+      visit edit_recipe_path(@recipe1)
+      # すでに投稿済みの内容がフォームに入っていることを確認する
+      expect(
+        find('#recipe_title').value
+      ).to eq(@recipe1.title)
+      expect(
+        find('#recipe_price').value
+      ).to eq(@recipe1.price.to_s)
+      expect(
+        find('#recipe_procedure1').value
+      ).to eq(@recipe1.procedure1)
+      expect(
+        find('#recipe_procedure2').value
+      ).to eq(@recipe1.procedure2)
+      expect(
+        find('#recipe_procedure3').value
+      ).to eq(@recipe1.procedure3)
+      expect(
+        find('#recipe_info').value
+      ).to eq(@recipe1.info)
+      # 投稿内容を編集する
+      fill_in 'recipe_title', with: "#{@recipe1.title}+変更"
+      fill_in 'recipe_price', with: @recipe1.price + 1
+      fill_in 'recipe_procedure1', with: "#{@recipe1.procedure1}+変更"
+      fill_in 'recipe_procedure2', with: "#{@recipe1.procedure2}+変更"
+      fill_in 'recipe_procedure3', with: "#{@recipe1.procedure3}+変更"
+      fill_in 'recipe_info', with: "#{@recipe1.info}+変更"
+      # 編集してもTweetモデルのカウントは変わらないことを確認する
+      expect{
+        find('input[name="commit"]').click
+      }.to change { Recipe.count }.by(0)
+      # 完了後詳細画面に遷移したことを確認する
+      expect(current_path).to eq(recipe_path(@recipe1))
+      # 変更した内容が反映されていることを確認する
+      expect(page).to have_content(@recipe1.price + 1)
+      expect(page).to have_content("#{@recipe1.procedure1}+変更")
+      expect(page).to have_content("#{@recipe1.procedure2}+変更")
+      expect(page).to have_content("#{@recipe1.procedure3}+変更")
+      expect(page).to have_content("#{@recipe1.info}+変更")
+      # トップページに遷移する
+      visit root_path
+      # トップページに変更したレシピのタイトルが存在することを確認する
+      expect(page).to have_content("#{@recipe1.title}+変更")
+
+    end
+  end
+  context 'レシピ編集ができないとき' do
+    it 'ログインしたユーザーは自分以外が投稿したレシピの編集画面には遷移できない' do
+      # レシピ1を投稿したユーザーでログインする
+      sign_in(@recipe1.user)
+      # レシピ2の詳細画面へ遷移する
+      visit recipe_path(@recipe2)
+      # レシピ２の詳細に「更新」がないことを確認
+      expect(page).to have_no_link '更新', href: edit_recipe_path(@recipe2)
+    end
+    it 'ログインしていないとレシピの編集画面には遷移できない' do
+      # トップページにいる
+      visit root_path
+      # レシピ1の詳細に遷移する
+      visit recipe_path(@recipe1)
+      # レシピ1の詳細に「更新」がないことを確認
+      expect(page).to have_no_link '更新', href: edit_recipe_path(@recipe1)
+      # レシピ2の詳細に遷移する
+      visit recipe_path(@recipe2)
+      # レシピ2の詳細に「更新」がないことを確認
+      expect(page).to have_no_link '更新', href: edit_recipe_path(@recipe2)
     end
   end
 end
