@@ -75,3 +75,4 @@ RSpec.describe 'Recipes', type: :request do
     end
   end
 end
+

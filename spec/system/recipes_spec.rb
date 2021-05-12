@@ -29,12 +29,9 @@ RSpec.describe 'レシピ投稿', type: :system do
       # トップページには先ほど投稿した内容のレシピが存在することを確認する（画像）
       expect(page).to have_selector ".list-image-box"
       # トップページには先ほど投稿した内容のレシピが存在することを確認する（タイトルなど）
-      expect(page).to have_content(@recipe_title)
-      expect(page).to have_content(@recipe_price)
-      expect(page).to have_content(@recipe_procedure1)
-      expect(page).to have_content(@recipe_procedure2)
-      expect(page).to have_content(@recipe_procedure3)
-      expect(page).to have_content(@recipe_info)
+      expect(page).to have_content(@recipe.title)
+      expect(page).to have_content(@recipe.price)
+      expect(page).to have_content(@recipe.procedure1)
     end
   end
   context 'レシピ投稿ができないとき' do
@@ -128,6 +125,54 @@ RSpec.describe 'レシピの編集', type: :system do
       visit recipe_path(@recipe2)
       # レシピ2の詳細に「更新」がないことを確認
       expect(page).to have_no_link '更新', href: edit_recipe_path(@recipe2)
+    end
+  end
+end
+
+RSpec.describe 'レシピ削除', type: :system do
+  before do
+    @recipe1 = FactoryBot.create(:recipe)
+    @recipe2 = FactoryBot.create(:recipe)
+  end
+
+  context 'レシピ削除ができるとき' do
+    it 'ログインしたユーザーは自らが投稿したレシピの削除ができる' do
+      # レシピ1を投稿したユーザーでログインする
+      sign_in(@recipe1.user)
+      # レシピ1の詳細に遷移する
+      visit recipe_path(@recipe1)
+      # レシピ1の詳細に「削除」があることを確認する
+      expect(page).to have_link '削除', href: recipe_path(@recipe1)
+      # 投稿を削除するとレコードの数が1減ることを確認する
+      click_link '削除', href: recipe_path(@recipe1)
+      expect {
+        page.accept_confirm "削除したデータは戻りません、よろしいですか？"
+        sleep 0.5
+      }.to change { Recipe.count }.by(-1)
+      # トップページに遷移していることを確認
+      expect(current_path).to eq(root_path)
+    end
+  end
+  context 'レシピ削除ができないとき' do
+    it 'ログインしたユーザーは自分以外が投稿したレシピの削除ができない' do
+      # レシピ1を投稿したユーザーでログインする
+      sign_in(@recipe1.user)
+      # レシピ2の「詳細」へ遷移する
+      visit recipe_path(@recipe2)
+      # レシピ2に「削除」ボタンが無いことを確認する
+      expect(page).to have_no_link '削除', href: recipe_path(@recipe2)      
+    end
+    it 'ログインしていないとレシピの削除ボタンがない' do
+      # トップページに移動する
+      visit root_path
+      # レシピ1の詳細に遷移する
+      visit recipe_path(@recipe1)
+      # レシピ1の詳細に「更新」がないことを確認
+      expect(page).to have_no_link '削除', href: recipe_path(@recipe1)
+      # レシピ2の詳細に遷移する
+      visit recipe_path(@recipe2)
+      # レシピ2の詳細に「更新」がないことを確認
+      expect(page).to have_no_link '削除', href: recipe_path(@recipe2)
     end
   end
 end
