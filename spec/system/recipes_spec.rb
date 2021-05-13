@@ -27,7 +27,7 @@ RSpec.describe 'レシピ投稿', type: :system do
       # トップページに遷移することを確認する
       expect(current_path).to eq(root_path)
       # トップページには先ほど投稿した内容のレシピが存在することを確認する（画像）
-      expect(page).to have_selector ".list-image-box"
+      expect(page).to have_selector '.list-image-box'
       # トップページには先ほど投稿した内容のレシピが存在することを確認する（タイトルなど）
       expect(page).to have_content(@recipe.title)
       expect(page).to have_content(@recipe.price)
@@ -43,7 +43,6 @@ RSpec.describe 'レシピ投稿', type: :system do
     end
   end
 end
-
 
 RSpec.describe 'レシピの編集', type: :system do
   before do
@@ -87,9 +86,9 @@ RSpec.describe 'レシピの編集', type: :system do
       fill_in 'recipe_procedure3', with: "#{@recipe1.procedure3}+変更"
       fill_in 'recipe_info', with: "#{@recipe1.info}+変更"
       # 編集してもTweetモデルのカウントは変わらないことを確認する
-      expect{
+      expect  do
         find('input[name="commit"]').click
-      }.to change { Recipe.count }.by(0)
+      end.to change { Recipe.count }.by(0)
       # 完了後詳細画面に遷移したことを確認する
       expect(current_path).to eq(recipe_path(@recipe1))
       # 変更した内容が反映されていることを確認する
@@ -102,7 +101,6 @@ RSpec.describe 'レシピの編集', type: :system do
       visit root_path
       # トップページに変更したレシピのタイトルが存在することを確認する
       expect(page).to have_content("#{@recipe1.title}+変更")
-
     end
   end
   context 'レシピ編集ができないとき' do
@@ -145,10 +143,10 @@ RSpec.describe 'レシピ削除', type: :system do
       expect(page).to have_link '削除', href: recipe_path(@recipe1)
       # 投稿を削除するとレコードの数が1減ることを確認する
       click_link '削除', href: recipe_path(@recipe1)
-      expect {
-        page.accept_confirm "削除したデータは戻りません、よろしいですか？"
+      expect do
+        page.accept_confirm '削除したデータは戻りません、よろしいですか？'
         sleep 0.5
-      }.to change { Recipe.count }.by(-1)
+      end.to change { Recipe.count }.by(-1)
       # トップページに遷移していることを確認
       expect(current_path).to eq(root_path)
     end
@@ -160,7 +158,7 @@ RSpec.describe 'レシピ削除', type: :system do
       # レシピ2の「詳細」へ遷移する
       visit recipe_path(@recipe2)
       # レシピ2に「削除」ボタンが無いことを確認する
-      expect(page).to have_no_link '削除', href: recipe_path(@recipe2)      
+      expect(page).to have_no_link '削除', href: recipe_path(@recipe2)
     end
     it 'ログインしていないとレシピの削除ボタンがない' do
       # トップページに移動する
