@@ -4,7 +4,7 @@
 
 .title-contents {
   width: 100vw;
-  height: 50vh;
+  height: 70vh;
   min-height: 250px;
   background-image: image-url('top_image.jpg');
   background-size: cover;
@@ -28,18 +28,12 @@
 }
 
 .rule-contents {
-  width: 100vw;
-  padding: 7vh 15vw;
   margin-top: 3vh;
-  background-image: image-url('rule_background.jpg');
-  background-position: top center;
-  background-repeat: no-repeat;
-  background-size: auto 100%;
 }
 
 .rule-title {
   font-size: 3vw;
-  color: rgba(42, 27, 3, 0.807);
+  color: rgba(241, 88, 118, 0.998);
   text-shadow: 0 0 5px rgba(255, 255, 255, 0.9);
   font-weight: 600;
   font-style: italic;
