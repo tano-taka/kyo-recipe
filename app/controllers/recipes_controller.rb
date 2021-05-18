@@ -4,8 +4,9 @@ class RecipesController < ApplicationController
   before_action :identification, only: [:edit, :update, :destroy]
 
   def index
-    @recipe = Recipe.includes(:user).order('created_at DESC')
-    @recipe_pop = Recipe.includes(:liked_users).sort {|a,b| b.liked_users.size <=> a.liked_users.size}
+    @recipe = Recipe.includes(:user, :likes).order('created_at DESC')
+    @recipe_pop = Recipe.includes(:liked_users, :likes, :user).sort {|a,b| b.liked_users.size <=> a.liked_users.size}
+    @recipe_price = Recipe.includes(:user, :likes).order('price ASC')
   end
 
   def new
