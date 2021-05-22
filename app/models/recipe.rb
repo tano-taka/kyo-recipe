@@ -33,5 +33,4 @@ class Recipe < ApplicationRecord
     end
     price / recipe.length
   end
-
 end

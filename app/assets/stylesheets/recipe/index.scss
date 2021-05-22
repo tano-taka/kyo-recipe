@@ -33,7 +33,7 @@
 
 .rule-title {
   font-size: 3vw;
-  color: rgba(241, 88, 118, 0.998);
+  color: rgb(187, 66, 66);
   text-shadow: 0 0 5px rgba(255, 255, 255, 0.9);
   font-weight: 600;
   font-style: italic;
@@ -44,7 +44,7 @@
 }
 
 .recipe-contents {
-  padding: 5vh;
+  padding: 3vh 5vh;
 }
 
 .recipe-list-title {
@@ -52,7 +52,16 @@
   color: rgb(98, 79, 32);
   font-weight: 600;
   background:linear-gradient(transparent 80%, rgb(254, 233, 185) 0%);
-  margin-bottom: 2vh;
+  margin: 2vh 0;
+  display: flex;
+  justify-content: space-between;
+}
+
+.recipe-order-link {
+  font-size: 1.5vw;
+  text-decoration: none;
+  color: rgb(187, 66, 66);
+  margin-right: 4vw;
 }
 
 .recipe-lists {

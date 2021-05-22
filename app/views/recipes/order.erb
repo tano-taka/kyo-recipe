@@ -3,14 +3,12 @@
 <div class='header-anker'>
 </div>  
 
-  <%# recipe/index.scss使用 %>
-  <div class="recipe-contents">
+<div class="recipe-contents">
     <div class="recipe-list-title">
-      検索レシピ（新着順）
+      新着レシピ (全件表示）
     </div>
     <div class="recipe-lists">
-      <% @recipe.each do |recipe| %>
+      <% @recipe.first(12).each do |recipe| %>
         <%= render partial: "shared/recipe_list", locals: { recipe: recipe } %>
       <% end %>
     </div>
-  </div> 

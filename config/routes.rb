@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   delete "likes/:recipe_id/destroy", to: "likes#destroy"
   resources :recipes do
     collection do
-      get 'search'
+      get 'search', 'order'
     end
     member do
       get 'user'
